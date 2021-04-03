@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: skntesting 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skntesting
+  template:
+    metadata:
+      labels:
+        app: skntesting 
+    spec:
+      containers:
+        - name: skntesting 
+          image: sagartestacr.azurecr.io/skntesting
+          ports:
+          - containerPort: 8080
